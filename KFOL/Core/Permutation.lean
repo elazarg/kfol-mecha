@@ -2,8 +2,6 @@ import KFOL.Core.Eval
 
 namespace KFOL
 
-open Classical
-
 universe u
 
 variable {K : ℕ} {L : FirstOrder.Language}
@@ -50,7 +48,7 @@ def permProfile (π : Equiv.Perm (Role K)) (G : Game K L)
       have := congrArg (fun r => π.symm r) (by
         simpa [permRolesGame, hklen, k'] using hk)
       simpa using this
-    let v' : View (G := G) (𝓜 := 𝓜) k' :=
+    let v' : View (G := G) (𝓜 := 𝓜) :=
       v.map fun entry => ⟨Fin.cast hklen entry.1, entry.2⟩
     σ (π.symm i) k' hk' v'
 

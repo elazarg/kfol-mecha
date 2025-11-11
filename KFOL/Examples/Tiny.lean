@@ -3,7 +3,6 @@ import KFOL.Core.Eval
 namespace KFOL.Examples
 
 open KFOL
-open Classical
 
 instance : (FirstOrder.Language.empty).Structure Unit :=
   FirstOrder.Language.Inhabited.trivialStructure
@@ -27,7 +26,6 @@ lemma trivialGame_holds :
 
 lemma trivialGame_eval :
     eval (G := trivialGame) (𝓜 := Unit) trivialProfile ⟨0, by decide⟩ = true := by
-  classical
   simpa using
     (eval_true_iff (G := trivialGame) (𝓜 := Unit) trivialProfile ⟨0, by decide⟩).2
       trivialGame_holds

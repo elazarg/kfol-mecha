@@ -51,26 +51,17 @@ def holds (G : Game K L) (i : Role K) : Prop :=
 lemma eval_eq_decide (G : Game K L) (σ : Profile (G := G) (𝓜 := 𝓜))
     (i : Role K) [Decidable (holds (G := G) (𝓜 := 𝓜) i)] :
     eval (G := G) (𝓜 := 𝓜) σ i = decide (holds (G := G) (𝓜 := 𝓜) i) := by
-  classical
-  by_cases h : holds (G := G) (𝓜 := 𝓜) i
-  · simp [eval, holds, h]
-  · simp [eval, holds, h]
+  simp [eval, holds]
 
 @[simp] lemma eval_true_iff (G : Game K L) (σ : Profile (G := G) (𝓜 := 𝓜))
     (i : Role K) :
     eval (G := G) (𝓜 := 𝓜) σ i = true ↔ holds (G := G) (𝓜 := 𝓜) i := by
-  classical
-  by_cases h : holds (G := G) (𝓜 := 𝓜) i
-  · simp [holds, eval, h]
-  · simp [holds, eval, h]
+  simp [holds, eval]
 
 @[simp] lemma eval_false_iff (G : Game K L)
     (σ : Profile (G := G) (𝓜 := 𝓜)) (i : Role K) :
     eval (G := G) (𝓜 := 𝓜) σ i = false ↔ ¬ holds (G := G) (𝓜 := 𝓜) i := by
-  classical
-  by_cases h : holds (G := G) (𝓜 := 𝓜) i
-  · simp [holds, eval, h]
-  · simp [holds, eval, h]
+  simp [holds, eval]
 
 /-- Equality of strategy profiles implies equality of evaluations. -/
 @[simp] lemma eval_profile_congr

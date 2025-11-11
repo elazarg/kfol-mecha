@@ -2,8 +2,6 @@ import KFOL.Core.Eval
 
 namespace KFOL
 
-open Classical
-
 universe u
 
 variable {K : ℕ} {L : FirstOrder.Language}

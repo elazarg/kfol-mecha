@@ -11,7 +11,7 @@ variable {𝓜 : Type u} [L.Structure 𝓜]
 its visible history. -/
 def Strategy (G : Game K L) (i : Role K) : Type _ :=
   ∀ (k : MoveIx G), (G.binders.get k).role = i →
-    View (G := G) (𝓜 := 𝓜) k → binderCarrier (G := G) (𝓜 := 𝓜) k
+    View (G := G) (𝓜 := 𝓜) → binderCarrier (G := G) (𝓜 := 𝓜) k
 
 /-- A strategy profile collects a strategy for every role. -/
 abbrev Profile (G : Game K L) := ∀ i, Strategy (G := G) (𝓜 := 𝓜) i

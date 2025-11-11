@@ -16,6 +16,6 @@ structure Game (K : ℕ) (L : FirstOrder.Language) where
   terminal : Terminal K L
 
 /-– Indices for binder occurrences in the prefix of a game. -/
-abbrev MoveIx (G : Game K L) := Fin G.binders.length
+abbrev MoveIx {K L} (G : Game K L) := Fin G.binders.length
 
 end KFOL
