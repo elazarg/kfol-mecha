@@ -19,8 +19,11 @@ def merge (G : Game K L) (i : Role K)
     (opp : Opponents (G := G) (𝓜 := 𝓜) i) :
     Profile (G := G) (𝓜 := 𝓜) :=
   fun j =>
-    if h : j = i then by cases h; exact σi
-    else opp j h
+    dite (j = i)
+      (fun h => by
+        cases h
+        exact σi)
+      (fun h => opp j h)
 
 /-- Player `i` can force her objective if she has a strategy that succeeds
 against every profile of the other players. -/

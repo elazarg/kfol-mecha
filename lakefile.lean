@@ -19,7 +19,8 @@ lean_lib KFOL where
     `KFOL.Core.Strategy,
     `KFOL.Core.Eval,
     `KFOL.Core.Permutation,
-    `KFOL.Core.Forceability
+    `KFOL.Core.Forceability,
+    `KFOL.Examples.Tiny
   ]
 
 lean_exe «kfol-mecha» where

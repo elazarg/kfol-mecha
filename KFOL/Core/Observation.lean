@@ -17,7 +17,7 @@ abbrev View (G : Game K L) (k : MoveIx G) : Type _ :=
 
 /-- Broadcast visibility: at step `k`, every earlier move (in syntactic order)
 is visible together with its value. -/
-@[simp] def obsBroadcast (G : Game K L) (k : MoveIx G)
+def obsBroadcast (G : Game K L) (k : MoveIx G)
     (a : Assignment (G := G) (𝓜 := 𝓜) k.1) :
     View (G := G) (𝓜 := 𝓜) k :=
   (List.finRange k.1).map fun (j : Fin k.1) =>
